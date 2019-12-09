@@ -1,0 +1,81 @@
+.vertical-center {
+    min-height: 70%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 70vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+
+    background: white;
+  }
+
+.horizontal-center {
+    display: flex;
+    justify-content: center;
+}
+.search-button {
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.book-list {
+    position: absolute;
+    top: 100vh;
+    height: 100vh;
+}
+
+.book {
+    display: flex;
+    margin-top: 10px;
+}
+
+.center {
+   display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price {
+    margin-bottom: 0;
+}
+
+.book-list-div {
+    height: 80vh;
+    overflow: scroll;
+}
+
+#book-detail-container {
+    position: absolute;
+    top: 200vh;
+    height: 100vh;
+}
+
+#book-order-container {
+    position: absolute;
+    top: 200vh;
+    height: 100vh;
+    /* display: none; */
+}
+
+#pay-container {
+    position: absolute;
+    width: 100%;
+}
+
+#shipping-container {
+    position: absolute;
+    width: 100%;
+    display: none;
+}
+
+#order-success {
+    position: absolute;
+    width: 100%;
+    display: none;
+}
+
+#login-container {
+    position: absolute;
+    width: 100%;
+    display: none;
+}

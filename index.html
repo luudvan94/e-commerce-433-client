@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+        integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+        integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P"
+        crossorigin="anonymous"></script>
+
+    <script src="./cookies.js"></script>
+    <script src="./htmlComponent.js"></script>
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">BookStore</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./partner/index.html">Partner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./customer/index.html">Customer</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron vertical-center text-center">
+            <div class="container">
+                <img src="https://www.freeiconspng.com/uploads/book-store-icon-7.png" class="img-fluid"
+                    alt="Responsive image" />
+                <input class="form-control" type="text" placeholder="Search by book name"
+                    aria-label="Search by book name" id="search-input">
+                <button type="button" class="btn btn-primary search-button" id="book-search">Search</button>
+            </div>
+        </div>
+
+        <div class="container book-list" id="book-list">
+            <button type="button" class="btn btn-info search-button" id="book-search-back">back to search</button>
+
+            <div class="text-center">
+                <h1 id="search-title"></h1>
+            </div>
+
+            <div class="book-list-div">
+                <ul class="list-group container" id="book-list-container">
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container book-detail-container" id="book-detail-container">
+            <div class="row">
+                <button type="button" class="btn btn-info search-button" id="book-search-back2">back to search</button>
+                <button type="button" class="btn btn-info search-button" id="book-list-back">back to list</button>
+            </div>
+
+            <ul class="list-group container" id="comments-container">
+            </ul>
+        </div>
+
+        <div class="container book-order-container" id="book-order-container">
+            <div class="row">
+                <button type="button" class="btn btn-info search-button" id="book-search-back3">back to search</button>
+                <button type="button" class="btn btn-info search-button" id="book-list-back2">back to list</button>
+            </div>
+
+            <h3>Order</h3>
+            <div class="panel panel-default" id="pay-container">
+                <h4>Add payment:</h4>
+                <div class="panel-body form-horizontal payment-form">
+                    <div class="form-group">
+                        <label for="concept" class="col-sm-3 control-label">Card Number</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="card-number" name="concept">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="col-sm-3 control-label">Expiration Date</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="expire" name="description">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount" class="col-sm-3 control-label">Amount</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="amount" name="amount">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success search-button" id="book-pay">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default" id="shipping-container">
+                <div class="panel-body form-horizontal payment-form">
+                    <div class="form-group">
+                        <label for="concept" class="col-sm-3 control-label">Shipping Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="shipping" name="concept">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="concept" class="col-sm-3 control-label">Billing Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="billing" name="concept">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success search-button" id="book-confirm">Confirm</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default" id="order-success">
+                <h3>We have received your order!!</h3>
+            </div>
+
+            <div class="panel panel-default" id="login-container">
+                <h3>Login</h3>
+                <div class="panel-body form-horizontal payment-form">
+                    <div class="form-group">
+                        <label for="concept" class="col-sm-3 control-label">Username</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="username" name="concept">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="col-sm-3 control-label">Password</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="password" name="description">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success search-button" id="login">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>

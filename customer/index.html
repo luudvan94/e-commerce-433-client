@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+        integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+        integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P"
+        crossorigin="anonymous"></script>
+
+    <script src="../cookies.js"></script>
+    <script src="../htmlComponent.js"></script>
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">BookStore</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../partner/index.html">Partner <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Customer</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- LOGIN -->
+        <div class="jumbotron vertical-center text-center" id="login">
+            <form class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal">Customer Login</h1>
+                <label for="inputEmail" class="sr-only">User name</label>
+                <input id="inputUsername" class="form-control" placeholder="user name">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password">
+                <button class="btn btn-lg btn-primary btn-block" type="submit" id="login-button">Sign in</button>
+                <a href="#" id="to-sign-up">Sign up</a>
+            </form>
+        </div>
+
+        <!-- SIGNUP -->
+        <div class="jumbotron vertical-center text-center" id="signup">
+            <form class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal">Customer Sign up</h1>
+                <label for="inputEmail" class="sr-only">User name</label>
+                <input id="inputUsernameSignup" class="form-control" placeholder="user name" required autofocus>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPasswordSignup" class="form-control" placeholder="Password" required>
+                <label for="inputPassword" class="sr-only">Confirm Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" id="signup-button">Sign Up</button>
+                <a href="#" id="back-to-login">Login</a>
+            </form>
+        </div>
+
+        <!-- Partner Info -->
+        <div class="jumbotron vertical-center text-center" id="partner-info">
+            <form class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal">Customer Info</h1>
+                <label for="inputPartnerName" class="sr-only">Customer Name</label>
+                <input id="inputPartnerName" class="form-control" placeholder="name" required autofocus>
+                <label for="inputPartnerAddress" class="sr-only">Address</label>
+                <input id="inputPartnerAddress" class="form-control" placeholder="address" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" id="update-button">Update</button>
+            </form>
+        </div>
+
+        <div class="container info" id="info">
+            <div class="row">
+                <h2 class="partner-name" id="partner-name">Customer Name</h2>
+                <button type="button" class="col-offset-5 btn btn-success order-filter" id="update-info">Update Info</button>
+                <button type="button" class="col-offset-5 btn btn-danger order-filter" id="log-out">Log out</button>
+            </div>
+            <h4 id="partner-address">Customer Address</h4>
+
+            <div class="orders">
+                <div class="row">
+                    <a href="#" id="orders-tab">
+                        <h3>Orders</h3>
+                    </a>
+                    <h3>|</h3>
+                    <a href="#" id="books-tab">
+                        <h3>Reviews</h3>
+                    </a>
+                </div>
+
+                <div id="orders-info">
+                    <div class="row">
+                        <button type="button" class="col-2 btn btn-info order-filter" id="orders-new">new
+                            orders</button>
+
+                        <button type="button" class="col-2 btn btn-primary order-filter" id="orders-shipping">shipping
+                            orders</button>
+
+                        <button type="button" class="col-2 btn btn-success order-filter" id="orders-delivered">delivered
+                            orders</button>
+
+                        <button type="button" class="col-2 btn btn-danger order-filter" id="orders-cancelled">cancelled
+                            orders</button>
+                    </div>
+
+                    <div class="orders-list">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Book name</th>
+                                    <th scope="col">Date time</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-list-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="books-list">
+                    <ul class="list-group container" id="book-list-ul">
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+</body>
